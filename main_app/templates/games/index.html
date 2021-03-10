@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Cat List</h1>
+
+{% for game in games %}
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">{{ game.title }}</span>
+      <p>Genre: {{ game.genre }}</p>
+      <p>Description: {{ game.description }}</p>
+      {% if game.playtime > 0 %}
+        <p>Playtime: {{ game.playtime }} hours</p>
+      {% else %}
+        <p>Not played</p>
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
